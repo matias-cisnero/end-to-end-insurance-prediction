@@ -15,10 +15,13 @@ Proyecto MLOps de extremo a extremo para la predicción de costos de seguros mé
 ## Cómo ejecutar el proyecto paso a paso
 
 ### Paso 1: Iniciar el servidor de MLflow
-Inicia el servidor local de MLflow ejecutando el script helper que configura la seguridad de red automáticamente:
-```bash
-python run_mlflow.py
+Inicia el servidor local de MLflow ejecutando el comando:
+
+```powershell
+$env:MLFLOW_SERVER_ALLOWED_HOSTS="*"
+mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlartifacts --host 0.0.0.0 --port 5000
 ```
+
 El servidor quedará disponible en http://localhost:5000.
 
 ### Paso 2: Levantar el ecosistema (PostgreSQL + API de FastAPI)

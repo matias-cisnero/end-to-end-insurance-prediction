@@ -12,7 +12,9 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   api:
-    build: .
+    build:
+      context: .
+      dockerfile: api/Dockerfile
     container_name: insurance_api
     ports:
       - "8000:8000"

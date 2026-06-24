@@ -1,7 +1,7 @@
 import pytest
 from fastapi.testclient import TestClient
 import numpy as np
-from app import app, models
+from api.app import app, models
 
 class DummyModel:
     def predict(self, df):

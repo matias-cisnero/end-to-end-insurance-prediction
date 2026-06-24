@@ -11,7 +11,6 @@ models = {}
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
-
     model = mlflow.pyfunc.load_model(MODEL_URI)
     models["insurance_model"] = model
     yield
