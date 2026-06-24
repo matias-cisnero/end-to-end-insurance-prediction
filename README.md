@@ -2,6 +2,10 @@
 
 Proyecto MLOps de extremo a extremo para la predicción de costos de seguros médicos utilizando modelos de Scikit-learn, tracking en MLflow y despliegue local con Docker Compose y FastAPI.
 
+## Arquitectura del Proyecto
+
+![Arquitectura del Proyecto](diagram.png)
+
 ---
 
 ## Requisitos Previos
