@@ -4,13 +4,13 @@ import mlflow
 import pandas as pd
 from pydantic import BaseModel
 
-from config import MODEL_URI
+from config import MODEL_URI, MLFLOW_TRACKING_URI
 
 models = {}
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    mlflow.set_tracking_uri("http://localhost:5000")
+    mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 
     model = mlflow.pyfunc.load_model(MODEL_URI)
     models["insurance_model"] = model
